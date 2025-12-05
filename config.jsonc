@@ -1,0 +1,122 @@
+{
+  "height": 42, // Adjusted to meet minimum height requirement
+  //"height": 30,
+  "spacing": 8,
+  "modules-left": [
+    "niri/workspaces"
+  ],
+  "modules-center": [
+    "niri/window"
+  ],
+  "modules-right": [
+    "mpd",
+    "idle_inhibitor",
+    "pulseaudio",
+    "network",
+    "battery",
+    "clock",
+    "tray",
+    "custom/power"
+  ],
+
+  "niri/workspaces": {
+    "format": "{icon}",
+    "all-outputs": false,
+    "disable-click": false,
+    "disable-markup": false,
+    "format-icons": {
+      "browser": "🌐",
+      "code": "💻",
+      "chat": "💬",
+      "active": "●",
+      "focused": "◉",
+      "default": "○"
+    }
+  },
+
+  "niri/window": {
+    "format": "{}",
+    "rewrite": {
+      "(.*) - Mozilla Firefox": "🌎 $1",
+      "(.*) - zsh": "> [$1]"
+    },
+    "tooltip": true,
+    "tooltip-format": "{}"
+  },
+
+  "mpd": {
+    "format": "🎵",
+    "tooltip": true,
+    "tooltip-format": "{stateIcon} {artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+    "interval": 5,
+    "state-icons": {
+      "paused": "⏸️",
+      "playing": "▶️"
+    },
+    "format-disconnected": "🎵",
+    "format-stopped": "⏹️ 🎵"
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "🔒",
+      "deactivated": "🔓"
+    }
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "tooltip": true,
+    "tooltip-format": "{volume}% 🔊",
+    "format-icons": {
+      "default": ["🔈", "🔉", "🔊"]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "network": {
+    "format-wifi": "📶",
+    "format-ethernet": "🌐",
+    "format-linked": "🌐",
+    "format-disconnected": "⚠️",
+    "tooltip": true,
+    "tooltip-format": "{ifname} via {gwaddr} - {essid} ({signalStrength}%)"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}",
+    "tooltip": true,
+    "tooltip-format": "{capacity}% - {time}",
+    "format-icons": ["🔋", "🔋", "🔋", "🔋", "🔋"],
+    "format-charging": "🔌",
+    "format-plugged": "⚡"
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "tray": {
+    "spacing": 10
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate"
+    }
+  }
+}
+

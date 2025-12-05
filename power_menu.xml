@@ -1,0 +1,20 @@
+<menu id="power-menu">
+  <section>
+    <item label="⏻  Shutdown">
+      <action name="default">shutdown</action>
+    </item>
+    <item label="🔁  Reboot">
+      <action name="default">reboot</action>
+    </item>
+    <item label="💤  Suspend">
+      <action name="default">systemctl suspend</action>
+    </item>
+    <item label="🌙  Hibernate">
+      <action name="default">systemctl hibernate</action>
+    </item>
+    <item label="🚪  Logout">
+      <action name="default">loginctl terminate-user $USER</action>
+    </item>
+  </section>
+</menu>
+

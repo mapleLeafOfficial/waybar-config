@@ -1,0 +1,41 @@
+#waybar {
+  background-color: rgba(30, 30, 30, 0.6); /* 深色背景，透明度0.6 */
+  color: #ffffff; /* 白色文本 */
+}
+
+#workspaces {
+  background-color: rgba(30, 30, 30, 0.6); /* 工作区背景，透明度0.6 */
+  padding: 4px;
+  border-radius: 16px;
+}
+
+#workspaces button {
+  margin: 0 4px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background-color: #333333;
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+
+#workspaces button.active {
+  background-color: #d1af61; /* Material高亮色 */
+  color: #000000;
+}
+
+#workspaces button:hover {
+  background-color: #444444;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#modules-right > * {
+  margin: 0 6px; /* 模块之间的间隙 */
+  padding: 4px 8px; /* 内边距，符合Material规范 */
+  border: 1px solid #555555; /* 细边框，深色主题 */
+  border-radius: 12px; /* 圆角，Material Design风格 */
+  background-color: rgba(51, 51, 51, 0.6); /* 模块背景，透明度0.6 */
+  color: #ffffff;
+}
